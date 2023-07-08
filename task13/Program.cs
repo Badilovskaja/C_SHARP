@@ -4,13 +4,46 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-int Num1 = Convert.ToInt32(Console.ReadLine());
-if (Num1 < 100)
+// int Num1 = Convert.ToInt32(Console.ReadLine());
+// if (Num1 < 100)
+// {
+//     Console.WriteLine("третьей цифры нет ");
+// }
+// else
+// {
+//     int Num2 = Num1 / 10;
+//     // int res = Num2 % 10;
+//     Console.WriteLine(Num2);
+// }
+// .................или
+
+int Prompt(string message)
 {
-    Console.WriteLine("третьей цифры нет ");
+    Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
-else
+int GetThirdRank(int number)
 {
-    int Num2 = Num1 / 100 % 100;
-    Console.WriteLine(Num2);
+    while (number > 999)
+    {
+        number /= 10;
+    }
+    return number % 10;
+}
+
+bool ValidateNumber(int number)
+{
+    if (number < 100)
+    {
+        Console.WriteLine("Третьей цифры нет");
+        return false;
+    }
+    return true;
+}
+int number = Prompt("Введите число > ");
+if (ValidateNumber(number))
+{
+    Console.WriteLine(GetThirdRank(number));
 }
