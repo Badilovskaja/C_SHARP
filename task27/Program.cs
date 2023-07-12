@@ -6,13 +6,13 @@ int SumX(int numX)
 {
 
     int count = Convert.ToString(numX).Length;
-    int advance = 0;
+    int product = 0;
     int result = 0;
 
     for (int i = 0; i < count; i++)
     {
-        advance = numX - numX % 10;
-        result = result + (numX - advance);
+        product = numX - numX % 10;
+        result = result + (numX - product);
         numX = numX / 10;
     }
     return result;
