@@ -8,7 +8,7 @@ int[] FillArray(int size, int deviation)
     {
         result[i] = new Random().Next(-deviation, deviation + 1);
     }
-    PrintArray(result);
+    PrintArray(result); //сразу выводит результат
     return result;
 }
 
@@ -40,7 +40,7 @@ void NegToPos(int[] numbers)
     }
 }
 
-//выводим значение
+//выводим значение массив  размер масива, число масива
 int[] numArray = FillArray(15, 10);
 NegToPos(numArray);
 PrintArray(numArray);
