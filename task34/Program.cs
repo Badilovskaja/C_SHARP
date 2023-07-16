@@ -1,15 +1,12 @@
-﻿//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
+﻿// Задать одномерный масив из 123 чисел, найти количество чисел от 10 до 99
 
-
-//  метод создания рандомного масива
+// метод создает масив чисел
 int[] getRandomArray(int length, int deviation)
 {
     int[] result = new int[length];
     for (int i = 0; i < length; i++)
     {
-        result[i] = new Random().Next(0, deviation +);
+        result[i] = new Random().Next(0, deviation + 1);
 
     }
     return result;
@@ -33,29 +30,30 @@ void printArray(int[] arrayToPrint)
 }
 
 
+// метод поиска числа чисел от 100 до 999
 
-// создаем метод который Напишите программу, которая покажет количество чётных чисел в массиве. 
-
-int[] productOfPairs(int[] arr, int number)
+int fillNumberArray(int[] array, int start, int end)
 {
-    int count = 0;//новая переменая счетчик
-    for (int i = 0; i < arr.Length; i++)
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        if (number % 2 == 0)
+        if (array[i] >= start && array[i] <= end)
         {
-            //если число четное тогда
-            count = count[i] + 1;
+            count = count + 1;
         }
     }
     return count;
 }
 
+// cоздаем новый массив который запускает функцию создания рандомного числа
+int[] myArray = getRandomArray(123, 200);
 
+// выводим массив чисел
+printArray(myArray);
 
+// cоздаем новый массив который вызывает функцию поиска чисел от 10 до 99
+int result = fillNumberArray(myArray, 100, 999);
 
-// выводим рандомный масив
+// выводим в консоль число чисел
+Console.WriteLine($"Количество трехзначных чисел в массиве - {result}");
 
-getRandomArray(10, 10);
-printArray(array);
-int[] prodArray = productOfPairs(array);
-printArray(prodArray);
