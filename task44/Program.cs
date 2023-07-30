@@ -39,5 +39,7 @@ void PrintArray(int[] array)
         else
             Console.WriteLine($"{array[i]}, ");
     }
+    Console.Write("]");
+
 }
 int[] fibonacci = Fibonacci(9);
